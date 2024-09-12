@@ -1,0 +1,8 @@
+body
+{
+    width:100%;
+}
+#first_number,#second_number
+{
+    display: none;
+}

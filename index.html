@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Liczby ujemne</title>
+</head>
+<body>
+    <div id="menu">
+        <input type="text" id="ques" placeholder="-2+(-4)"><input type="button" onclick="dzialanie()" value="Uruchom">
+        <input type="number" id="first_number">
+        <input type="number" id="second_number">
+        <input type="text" id="dx" disabled>
+        <script>
+            function dzialanie()
+            {
+                var str=document.getElementById('ques').value;
+                var x=str[0];
+                var z;
+                for (i=1;i<str.length;i++)
+                {
+                    z=i;
+                    if (str[i]!='+' && str[i]!='-')
+                    {
+                        x+=str[i];
+                    }
+                    else break;               
+                }
+                var y=null;
+                var d;
+                for (i;i<str.length;i++)
+                {
+                    if (str[i]=='-' && str[i+2]=='-')
+                    {
+                        i=i+2;
+                        d='+';
+                    }
+                    else if(str[i]=='+' && str[i+2]=='-')
+                    {
+                        i=i+2;
+                        d='-';
+                    }
+                    else if(str[i]=='-' || str[i]=='+') d=str[i];
+                    if (str[i]!=')' && str[i]!='(' && str[i]!='+' && str[i]!='-')
+                    {
+                        if (y===null)
+                        {
+                            y=str[i];
+                        }
+                        else y+=str[i];
+                    }
+                }
+            document.getElementById("first_number").value=x;        
+            document.getElementById("second_number").value=y;
+            document.getElementById("dx").value=d;
+            draw();        
+            }
+        </script>
+    </div>
+    <canvas id="nline" width="5500px" height="100px"></canvas>
+    <script src="skrypt.js"></script>
+</body>
+</html>
