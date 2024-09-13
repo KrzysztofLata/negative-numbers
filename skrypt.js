@@ -81,6 +81,8 @@ function anim(n1,n2,hz,n1_i,n2_i,d)
         ctx.fillRect(5+n1_i*hz,25,5,5);
         ctx.fillStyle='black';
         n1+=1;
+        
+    setTimeout(function(){anim(n1,n2,hz,n1_i,n2_i,d)},1000); //rekurencja
     }
     else if (d=='-' && n2!=n1)
     {
@@ -89,6 +91,7 @@ function anim(n1,n2,hz,n1_i,n2_i,d)
         ctx.fillRect(5+n2_i*hz,25,5,5);
         ctx.fillStyle='black';
         n2-=1;
-    }
+        
     setTimeout(function(){anim(n1,n2,hz,n1_i,n2_i,d)},1000); //rekurencja
+    }
 }
