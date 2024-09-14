@@ -34,7 +34,8 @@ function points(n1,n2,w,d)
     }
     var npoints=2*(n2-n1+2); //obliczenie liczby jednostek
     var hz=w/npoints;//obliczenie czestotliwosci (nazwa zmiennej od jedn czestotliwozci hz), zageszczenia jednostek
-    for (var i=0;i<npoints;i++)//rysowanie jednostek, wraz z liczbami 
+    ctx.fillRect(w,25,hz*2,5);
+    for (var i=0;i<npoints+1;i++)//rysowanie jednostek, wraz z liczbami 
     {
         var x=5+i*hz;
         ctx.fillRect(x,25,5,15);
